@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -34,26 +33,6 @@ import {
   Check,
   Send,
 } from "lucide-react";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Deepa Jagan — Associate Software Developer" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Deepa Jagan — B.Tech IT student at Sri Shanmugha College, React & full-stack developer, competitive programmer (LeetCode 750+, Codeforces 250+).",
-      },
-      { property: "og:title", content: "Deepa Jagan — Software Developer Portfolio" },
-      {
-        property: "og:description",
-        content:
-          "React, Spring Boot, Django developer. 750+ LeetCode solved. Multiple national-level coding competition winner.",
-      },
-    ],
-  }),
-  component: Index,
-});
 
 const NAME = "Deepa Jagan";
 
@@ -146,7 +125,7 @@ const achievements = [
   "3rd Prize — Reverse Coding, KSR College of Engineering (2025)",
 ];
 
-function Index() {
+export default function Index() {
   const [dark, setDark] = useState(true);
   const wrapRef = useRef<HTMLDivElement>(null);
 
