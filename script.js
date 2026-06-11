@@ -163,10 +163,10 @@ const CONTACT_LINES = [
 ];
 
 const SOCIAL_CHANNELS = [
-  { icon: "github", label: "GitHub", handle: "@deepajaganj12", href: "https://github.com/deepajaganj12" },
-  { icon: "linkedin", label: "LinkedIn", handle: "deepa-jagan", href: "https://www.linkedin.com/in/deepa-jagan-1a8104294/" },
-  { icon: "code-2", label: "LeetCode", handle: "@deepajagan", href: "https://leetcode.com/u/deepajagan/" },
-  { icon: "trending-up", label: "Codeforces", handle: "@deepa.12", href: "https://codeforces.com/profile/deepa.12" },
+  { icon: "fab fa-github",      iconType: "fa",     label: "GitHub",     handle: "@deepajaganj12", href: "https://github.com/deepajaganj12" },
+  { icon: "fab fa-linkedin-in", iconType: "fa",     label: "LinkedIn",   handle: "deepa-jagan",   href: "https://www.linkedin.com/in/deepa-jagan-1a8104294/" },
+  { icon: "code-2",             iconType: "lucide", label: "LeetCode",   handle: "@deepajagan",   href: "https://leetcode.com/u/deepajagan/" },
+  { icon: "trending-up",        iconType: "lucide", label: "Codeforces", handle: "@deepa.12",     href: "https://codeforces.com/profile/deepa.12" },
 ];
 
 const HERO_ROLES = [
@@ -588,12 +588,18 @@ function copyContactText(key, value) {
 function renderSocialChannels() {
   const container = document.getElementById("social-channels");
   
-  container.innerHTML = SOCIAL_CHANNELS.map(ch => `
+  container.innerHTML = SOCIAL_CHANNELS.map(ch => {
+    // Use Font Awesome for brand icons, Lucide for generic icons
+    const iconHtml = ch.iconType === "fa"
+      ? `<i class="${ch.icon} fa-social-card"></i>`
+      : `<i data-lucide="${ch.icon}"></i>`;
+
+    return `
     <a href="${ch.href}" target="_blank" rel="noopener" class="social-card">
       <div class="card-bg-glow"></div>
       <div class="social-card-body">
         <div class="social-icon">
-          <i data-lucide="${ch.icon}"></i>
+          ${iconHtml}
         </div>
         <div class="social-info">
           <p class="social-label">${ch.label}</p>
@@ -602,7 +608,8 @@ function renderSocialChannels() {
       </div>
       <i data-lucide="external-link" class="arrow-icon"></i>
     </a>
-  `).join("");
+  `;
+  }).join("");
 }
 
 // EmailJS contact form setup

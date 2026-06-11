@@ -89,6 +89,21 @@ svg[data-lucide] {
   height: var(--icon-size, 1rem);
 }
 
+/* Font Awesome icons — hero social links */
+.hero-socials a .fa-social {
+  font-size: 1.125rem;
+  line-height: 1;
+  display: block;
+}
+
+/* Font Awesome icons — social card (GitHub, LinkedIn) */
+.social-icon .fa-social-card {
+  font-size: 1.125rem;
+  line-height: 1;
+  display: block;
+  color: var(--primary-foreground);
+}
+
 /* ---- Nav & Logo ---- */
 .logo-icon svg          { --icon-size: 1rem;    color: var(--primary-foreground); }
 .nav-link svg           { --icon-size: 0.875rem; }
