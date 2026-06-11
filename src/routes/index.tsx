@@ -675,7 +675,7 @@ function Education() {
             meta: "CGPA: 8.88",
           },
           {
-            degree: "HSC — 12th Grade",
+            degree: "CBSE — 12th Grade",
             school: "Sri Chaitanya Techno School",
             period: "Completed May 2023",
             meta: "63%",
