@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import resumeAsset from "@/assets/resume.pdf.asset.json";
 import {
   Github,
   Linkedin,
@@ -328,7 +327,7 @@ function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={resumeAsset.url}
+              href="/Deepa-Jagan-Resume.pdf"
               download="Deepa-Jagan-Resume.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-6 py-3 text-sm font-semibold backdrop-blur transition-colors hover:border-primary hover:text-primary"
             >
