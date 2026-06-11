@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
@@ -32,7 +32,7 @@
 
     <!-- Header Navigation -->
     <header class="header">
-      <nav class="nav max-width">
+      <nav class="nav container">
         <a href="#top" class="nav-logo">
           <span class="logo-icon">
             <i data-lucide="terminal"></i>
@@ -40,85 +40,107 @@
           </span>
           <span class="logo-text">Deepa.dev</span>
         </a>
+
+        <!-- Desktop Nav Links -->
         <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#about"       class="nav-link">About</a></li>
+          <li><a href="#skills"      class="nav-link">Skills</a></li>
           <li><a href="#competitive" class="nav-link">CP</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects"    class="nav-link">Projects</a></li>
+          <li><a href="#experience"  class="nav-link">Experience</a></li>
           <li><a href="#achievements" class="nav-link">Awards</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#education"   class="nav-link">Education</a></li>
+          <li><a href="#contact"     class="nav-link">Contact</a></li>
         </ul>
+
         <div class="nav-actions">
-          <a href="#contact" class="btn btn-primary btn-hire">Hire me</a>
+          <a href="#contact" class="btn-hire">
+            <i data-lucide="mail"></i> Hire me
+          </a>
           <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-            <i data-lucide="sun" class="sun-icon"></i>
+            <i data-lucide="sun"  class="sun-icon"></i>
             <i data-lucide="moon" class="moon-icon"></i>
+          </button>
+          <!-- Hamburger (mobile) -->
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#about"        class="nav-link" data-mobile-link>About</a>
+        <a href="#skills"       class="nav-link" data-mobile-link>Skills</a>
+        <a href="#competitive"  class="nav-link" data-mobile-link>Competitive Programming</a>
+        <a href="#projects"     class="nav-link" data-mobile-link>Projects</a>
+        <a href="#experience"   class="nav-link" data-mobile-link>Experience</a>
+        <a href="#achievements" class="nav-link" data-mobile-link>Awards</a>
+        <a href="#education"    class="nav-link" data-mobile-link>Education</a>
+        <a href="#contact"      class="nav-link" data-mobile-link>Contact</a>
+      </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-width">
-      
+    <main>
+
       <!-- Hero Section -->
       <section id="top" class="hero section">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <p class="hero-command">$ whoami</p>
-            <h1 class="hero-title">
-              <span class="hero-glitch">Hi, I'm</span>
-              <span class="shimmer-text">Deepa Jagan</span>
-            </h1>
-            <div class="hero-typed">
-              <span class="typed-prompt">&gt;</span>
-              <span id="typed-text" class="typed-content"></span>
-              <span class="typed-cursor"></span>
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left: Text -->
+            <div class="hero-content">
+              <p class="hero-command">$ whoami</p>
+              <h1 class="hero-title">
+                <span class="hero-glitch">Hi, I'm</span>
+                <span class="shimmer-text">Deepa Jagan</span>
+              </h1>
+              <div class="hero-typed">
+                <span class="typed-prompt">&gt;</span>
+                <span id="typed-text" class="typed-content"></span>
+                <span class="typed-cursor"></span>
+              </div>
+              <p class="hero-desc">
+                B.Tech Information Technology student at <strong>Sri Shanmugha College of Engineering &amp; Technology</strong>.
+                I specialize in <strong>React</strong>, front-end optimization, and clean
+                <strong>MVC</strong> frameworks — and compete in algorithmic coding
+                symposia and national-level hackathons.
+              </p>
+              <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary btn-explore">
+                  <i data-lucide="rocket"></i> Explore Projects <i data-lucide="arrow-right" class="arrow"></i>
+                </a>
+                <a href="Deepa Resum.pdf" download="Deepa-Jagan-Resume.pdf" class="btn btn-secondary btn-resume">
+                  <i data-lucide="download"></i> Resume
+                </a>
+              </div>
+              <div class="hero-socials">
+                <a href="https://github.com/deepajaganj12" target="_blank" rel="noopener" aria-label="GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/deepa-jagan-1a8104294/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i data-lucide="linkedin"></i>
+                </a>
+                <a href="mailto:deepajaganj.13@gmail.com" aria-label="Email">
+                  <i data-lucide="mail"></i>
+                </a>
+              </div>
             </div>
-            <p class="hero-desc">
-              B.Tech Information Technology student at <strong>Sri Shanmugha College of Engineering & Technology</strong>.
-              I specialize in <strong>React</strong>, front-end optimization, and clean
-              <strong>MVC</strong> frameworks — and compete in algorithmic coding
-              symposia and national-level hackathons.
-            </p>
-            <div class="hero-buttons">
-              <a href="#projects" class="btn btn-primary btn-explore">
-                <i data-lucide="rocket"></i> Explore Projects <i data-lucide="arrow-right" class="arrow"></i>
-              </a>
-              <a href="Deepa-Jagan-Resume.pdf" download="Deepa-Jagan-Resume.pdf" class="btn btn-secondary btn-resume">
-                <i data-lucide="download"></i> Resume
-              </a>
-            </div>
-            <div class="hero-socials">
-              <a href="https://github.com/deepajaganj12" target="_blank" rel="noopener" aria-label="GitHub">
-                <i data-lucide="github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/deepa-jagan-1a8104294/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-              <a href="mailto:deepajaganj.13@gmail.com" aria-label="Email">
-                <i data-lucide="mail"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Interactive Hero Orb -->
-          <div class="hero-orb-container">
-            <div class="orb-glow"></div>
-            <div class="orb-ring ring-1"></div>
-            <div class="orb-ring ring-2"></div>
-            <!-- Orbiting Icons -->
-            <div class="orb-icon orbit-1"><i data-lucide="code-2"></i></div>
-            <div class="orb-icon orbit-2"><i data-lucide="database"></i></div>
-            <div class="orb-icon orbit-3"><i data-lucide="cloud"></i></div>
-            <div class="orb-icon orbit-4"><i data-lucide="cpu"></i></div>
-            <div class="orb-icon orbit-5"><i data-lucide="sparkles"></i></div>
-            <div class="orb-icon orbit-6"><i data-lucide="zap"></i></div>
-            
-            <div class="orb-center">
-              <i data-lucide="terminal"></i>
+
+            <!-- Right: Interactive Orb -->
+            <div class="hero-orb-container">
+              <div class="orb-glow"></div>
+              <div class="orb-ring ring-1"></div>
+              <div class="orb-ring ring-2"></div>
+              <div class="orb-icon orbit-1"><i data-lucide="code-2"></i></div>
+              <div class="orb-icon orbit-2"><i data-lucide="database"></i></div>
+              <div class="orb-icon orbit-3"><i data-lucide="cloud"></i></div>
+              <div class="orb-icon orbit-4"><i data-lucide="cpu"></i></div>
+              <div class="orb-icon orbit-5"><i data-lucide="sparkles"></i></div>
+              <div class="orb-icon orbit-6"><i data-lucide="zap"></i></div>
+              <div class="orb-center">
+                <i data-lucide="terminal"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -126,246 +148,224 @@
 
       <!-- Marquee Section -->
       <div class="marquee-container">
-        <div class="marquee-track font-mono" id="marquee-track">
-          <!-- Marquee contents will be generated by JavaScript -->
-        </div>
+        <div class="marquee-track font-mono" id="marquee-track"></div>
         <div class="marquee-fade-left"></div>
         <div class="marquee-fade-right"></div>
       </div>
 
       <!-- About Section -->
       <section id="about" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">01</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> ABOUT
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">01 — About</span>
+            <h2>B.Tech IT student, builder &amp; competitive coder.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">B.Tech IT student, builder & competitive coder.</h2>
-        </div>
-        
-        <div class="about-grid">
-          <p class="about-text">
-            I'm <strong>Deepa Jagan</strong>, a B.Tech Information Technology student at
-            Sri Shanmugha College of Engineering & Technology (CGPA 8.88). I work as a freelance
-            full-stack developer and previously interned at StartNet Ventures, shipping production
-            React UIs and Django/Spring Boot backends. Outside of work I compete in algorithmic coding
-            symposia — 750+ problems on LeetCode, 250+ on Codeforces, and multiple national-level wins.
-          </p>
-          <div class="exploring-card">
-            <div class="card-bg-glow"></div>
-            <h3 class="exploring-title font-mono">
-              <i data-lucide="zap"></i> CURRENTLY EXPLORING
-            </h3>
-            <ul class="exploring-list">
-              <li><span class="bullet"></span> Advanced React UIs & performance</li>
-              <li><span class="bullet"></span> Spring Boot microservices</li>
-              <li><span class="bullet"></span> System design fundamentals</li>
-              <li><span class="bullet"></span> Competitive programming (Codeforces Div 2)</li>
-            </ul>
+          <div class="about-grid">
+            <p class="about-text">
+              I'm <strong>Deepa Jagan</strong>, a B.Tech Information Technology student at
+              Sri Shanmugha College of Engineering &amp; Technology (CGPA 8.88). I work as a freelance
+              full-stack developer and previously interned at StartNet Ventures, shipping production
+              React UIs and Django/Spring Boot backends. Outside of work I compete in algorithmic coding
+              symposia — 750+ problems on LeetCode, 250+ on Codeforces, and multiple national-level wins.
+            </p>
+            <div class="exploring-card glass-card">
+              <div class="card-bg-glow"></div>
+              <h3 class="exploring-title">
+                <i data-lucide="zap"></i> CURRENTLY EXPLORING
+              </h3>
+              <ul class="exploring-list">
+                <li><span class="bullet"></span> Advanced React UIs &amp; performance</li>
+                <li><span class="bullet"></span> Spring Boot microservices</li>
+                <li><span class="bullet"></span> System design fundamentals</li>
+                <li><span class="bullet"></span> Competitive programming (Codeforces Div 2)</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Skills Section -->
       <section id="skills" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">02</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> TOOLBOX
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">02 — Toolbox</span>
+            <h2>Skills &amp; technologies.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Skills & technologies.</h2>
-        </div>
-        <div class="skills-grid" id="skills-grid">
-          <!-- Rendered dynamically by JavaScript -->
+          <div class="skills-grid" id="skills-grid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </section>
 
       <!-- Competitive Programming Section -->
       <section id="competitive" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">03</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> COMPETITIVE PROGRAMMING
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">03 — Competitive Programming</span>
+            <h2>Algorithmic problem solving.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Algorithmic problem solving.</h2>
-        </div>
-        <div class="cp-grid" id="cp-grid">
-          <!-- Rendered dynamically by JavaScript -->
+          <div class="cp-grid" id="cp-grid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </section>
 
       <!-- Projects Section -->
       <section id="projects" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">04</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> WORK
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">04 — Work</span>
+            <h2>Selected projects.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Selected projects.</h2>
-        </div>
-        <div class="projects-grid" id="projects-grid">
-          <!-- Rendered dynamically by JavaScript -->
+          <div class="projects-grid" id="projects-grid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </section>
 
       <!-- Experience Section -->
       <section id="experience" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">05</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> EXPERIENCE
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">05 — Experience</span>
+            <h2>Where I've worked.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Where I've worked.</h2>
-        </div>
-        <div class="experience-timeline" id="experience-timeline">
-          <!-- Rendered dynamically by JavaScript -->
+          <div class="experience-timeline" id="experience-timeline">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </section>
 
       <!-- Achievements Section -->
       <section id="achievements" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">06</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> AWARDS & RECOGNITION
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">06 — Awards &amp; Recognition</span>
+            <h2>Wins, prizes &amp; podiums.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Wins, prizes & podiums.</h2>
-        </div>
-        <div class="achievements-grid" id="achievements-grid">
-          <!-- Rendered dynamically by JavaScript -->
+          <div class="achievements-grid" id="achievements-grid">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </section>
 
       <!-- Education Section -->
       <section id="education" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">07</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> EDUCATION
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">07 — Education</span>
+            <h2>Academic background.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Academic background.</h2>
-        </div>
-        <div class="education-grid" id="education-grid">
-          <!-- Rendered dynamically by JavaScript -->
-        </div>
-        
-        <div class="certifications-section">
-          <p class="certifications-heading font-mono">CERTIFICATIONS</p>
-          <div class="certifications-grid" id="certifications-grid">
+          <div class="education-grid" id="education-grid">
             <!-- Rendered dynamically by JavaScript -->
+          </div>
+          <div class="certifications-section">
+            <p class="certifications-heading font-mono">CERTIFICATIONS</p>
+            <div class="certifications-grid" id="certifications-grid">
+              <!-- Rendered dynamically by JavaScript -->
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Contact Section -->
       <section id="contact" class="section reveal">
-        <div class="section-heading">
-          <div class="heading-row">
-            <span class="heading-number">08</span>
-            <div class="heading-subtitle">
-              <span class="line-decorator"></span> CONTACT
-            </div>
+        <div class="container">
+          <div class="section-title-block">
+            <span class="section-tag">08 — Contact</span>
+            <h2>Let's build something together.</h2>
+            <span class="section-underline"></span>
           </div>
-          <h2 class="heading-title shimmer-text">Let's build something together.</h2>
-        </div>
-        
-        <div class="contact-grid">
-          <!-- Left Terminal Info -->
-          <div class="contact-info">
-            <div class="terminal-card">
-              <div class="card-bg-glow"></div>
-              <div class="terminal-header">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-                <span class="terminal-title font-mono">~ /contact/deepa.sh</span>
-              </div>
-              <div class="terminal-body font-mono">
-                <p class="line"><span class="prompt">$</span> whoami</p>
-                <p class="response">Deepa Jagan <span class="dim">— Associate Software Developer</span></p>
-                <p class="line"><span class="prompt">$</span> cat contact.json</p>
-                <div class="json-block" id="json-block">
-                  <!-- Rendered dynamically by JavaScript with copy buttons -->
+
+          <div class="contact-grid">
+            <!-- Left: Terminal Info -->
+            <div class="contact-info">
+              <div class="terminal-card">
+                <div class="terminal-header">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                  <span class="terminal-title font-mono">~ /contact/deepa.sh</span>
                 </div>
-                <p class="line"><span class="prompt">$</span> echo "ready_to_collaborate"<span class="terminal-cursor"></span></p>
-              </div>
-            </div>
-            
-            <!-- Social Cards -->
-            <div class="social-channels" id="social-channels">
-              <!-- Rendered dynamically by JavaScript -->
-            </div>
-          </div>
-          
-          <!-- Right Contact Form -->
-          <div class="contact-form-container">
-            <div class="form-card">
-              <div class="card-bg-glow"></div>
-              <div class="form-header">
-                <div class="form-header-icon">
-                  <i data-lucide="send"></i>
-                </div>
-                <div>
-                  <p class="form-header-title">Send a Message</p>
-                  <p class="form-header-sub font-mono">// direct_to_inbox</p>
+                <div class="terminal-body font-mono">
+                  <p class="line"><span class="prompt">$</span> whoami</p>
+                  <p class="response">Deepa Jagan <span class="dim">— Associate Software Developer</span></p>
+                  <p class="line"><span class="prompt">$</span> cat contact.json</p>
+                  <div class="json-block" id="json-block">
+                    <!-- Rendered dynamically by JavaScript with copy buttons -->
+                  </div>
+                  <p class="line"><span class="prompt">$</span> echo "ready_to_collaborate"<span class="terminal-cursor"></span></p>
                 </div>
               </div>
               
-              <form id="contact-form" class="contact-form">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="contact_name" class="font-mono">Your Name</label>
-                    <input type="text" id="contact_name" name="from_name" required placeholder="Deepa Jagan" />
+              <!-- Social Cards -->
+              <div class="social-channels" id="social-channels">
+                <!-- Rendered dynamically by JavaScript -->
+              </div>
+            </div>
+            
+            <!-- Right: Contact Form -->
+            <div class="contact-form-container">
+              <div class="form-card">
+                <div class="form-header">
+                  <div class="form-header-icon">
+                    <i data-lucide="send"></i>
                   </div>
-                  <div class="form-group">
-                    <label for="contact_email" class="font-mono">Your Email</label>
-                    <input type="email" id="contact_email" name="from_email" required placeholder="you@example.com" />
+                  <div>
+                    <p class="form-header-title">Send a Message</p>
+                    <p class="form-header-sub font-mono">// direct_to_inbox</p>
                   </div>
                 </div>
                 
-                <div class="form-group">
-                  <label for="contact_subject" class="font-mono">Subject</label>
-                  <input type="text" id="contact_subject" name="subject" required placeholder="Internship / Freelance / Collaboration..." />
-                </div>
-                
-                <div class="form-group">
-                  <label for="contact_message" class="font-mono">Message</label>
-                  <textarea id="contact_message" name="message" required rows="5" placeholder="Tell me about your project, role or idea..."></textarea>
-                </div>
-                
-                <!-- Feedback Messages -->
-                <div id="form-feedback-success" class="form-feedback success hidden">
-                  <i data-lucide="badge-check"></i> Message sent! I'll get back to you soon.
-                </div>
-                <div id="form-feedback-error" class="form-feedback error hidden">
-                  <span id="error-text">✗ Failed to send message. Please try again.</span>
-                </div>
-                
-                <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">
-                  <span class="btn-content">
-                    <i data-lucide="send"></i> Send Message
-                  </span>
-                  <span class="btn-loader hidden">
-                    <span class="spinner"></span> Sending…
-                  </span>
-                  <span class="shimmer-sweep"></span>
-                </button>
-                <p class="form-footer font-mono">Powered by EmailJS · Messages go directly to my inbox</p>
-              </form>
+                <form id="contact-form" class="contact-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="contact_name" class="font-mono">Your Name</label>
+                      <input type="text" id="contact_name" name="from_name" required placeholder="Deepa Jagan" />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact_email" class="font-mono">Your Email</label>
+                      <input type="email" id="contact_email" name="from_email" required placeholder="you@example.com" />
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact_subject" class="font-mono">Subject</label>
+                    <input type="text" id="contact_subject" name="subject" required placeholder="Internship / Freelance / Collaboration..." />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact_message" class="font-mono">Message</label>
+                    <textarea id="contact_message" name="message" required rows="5" placeholder="Tell me about your project, role or idea..."></textarea>
+                  </div>
+                  
+                  <!-- Feedback Messages -->
+                  <div id="form-feedback-success" class="form-feedback success hidden">
+                    <i data-lucide="badge-check"></i> Message sent! I'll get back to you soon.
+                  </div>
+                  <div id="form-feedback-error" class="form-feedback error hidden">
+                    <span id="error-text">✗ Failed to send message. Please try again.</span>
+                  </div>
+                  
+                  <button type="submit" id="submit-btn" class="btn-submit">
+                    <span class="btn-content">
+                      <i data-lucide="send"></i> Send Message
+                    </span>
+                    <span class="btn-loader hidden">
+                      <span class="spinner"></span> Sending…
+                    </span>
+                    <span class="shimmer-sweep"></span>
+                  </button>
+                  <p class="form-footer font-mono">Powered by EmailJS · Messages go directly to my inbox</p>
+                </form>
+              </div>
             </div>
           </div>
         </div>

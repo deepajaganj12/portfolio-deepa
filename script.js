@@ -179,8 +179,10 @@ const HERO_ROLES = [
 // Initialize application on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  initMobileMenu();
   initMouseSpotlight();
   initScrollReveal();
+  initNavHighlight();
   initTypingAnimation();
   renderMarquee();
   renderSkills();
@@ -218,6 +220,49 @@ function initTheme() {
       localStorage.setItem("theme", "dark");
     }
   });
+}
+
+// Mobile Hamburger Menu
+function initMobileMenu() {
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileLinks = document.querySelectorAll("[data-mobile-link]");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      mobileMenu.classList.remove("open");
+    });
+  });
+}
+
+// Active Nav Link on Scroll
+function initNavHighlight() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links .nav-link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${entry.target.id}`
+            );
+          });
+        }
+      });
+    },
+    { threshold: 0.4, rootMargin: "-50px 0px -50px 0px" }
+  );
+
+  sections.forEach(s => observer.observe(s));
 }
 
 // Mouse Spotlight Tracker
@@ -298,7 +343,7 @@ function renderSkills() {
   const grid = document.getElementById("skills-grid");
   
   grid.innerHTML = SKILLS.map(category => `
-    <div class="skills-category">
+    <div class="skills-category glass-card">
       <div class="card-bg-glow"></div>
       <div class="skills-category-header">
         <div class="skills-icon-wrapper">
@@ -328,7 +373,7 @@ function renderCPStats() {
   const grid = document.getElementById("cp-grid");
   
   grid.innerHTML = CP_STATS.map(stat => `
-    <div class="cp-card">
+    <div class="cp-card glass-card">
       <div class="card-bg-glow"></div>
       <div class="cp-platform-icon ${stat.themeClass}">
         <i data-lucide="${stat.icon}"></i>
@@ -359,7 +404,7 @@ function renderProjects() {
   const grid = document.getElementById("projects-grid");
   
   grid.innerHTML = PROJECTS.map((proj, idx) => `
-    <article class="project-card">
+    <article class="project-card glass-card">
       <div class="card-bg-glow"></div>
       <div class="project-image-wrapper">
         <img class="project-image" src="${proj.image}" alt="${proj.title}" />
@@ -395,7 +440,7 @@ function renderExperience() {
         <span class="node-ping"></span>
         <span class="node-dot"></span>
       </div>
-      <div class="timeline-card">
+      <div class="timeline-card glass-card">
         <div class="timeline-header-row">
           <h3 class="timeline-role">${exp.role}</h3>
           <span class="timeline-period">${exp.period}</span>
@@ -423,7 +468,7 @@ function renderAchievements() {
   grid.innerHTML = ACHIEVEMENTS.map(ach => {
     const { rank, themeClass } = parseRank(ach);
     return `
-      <div class="achievement-card">
+      <div class="achievement-card glass-card">
         <div class="card-bg-glow"></div>
         <div class="achievement-body">
           <div class="achievement-badge ${themeClass}">
@@ -443,7 +488,7 @@ function renderEducation() {
   const grid = document.getElementById("education-grid");
   
   grid.innerHTML = EDUCATION.map(edu => `
-    <div class="education-card">
+    <div class="education-card glass-card">
       <div class="education-card-body">
         <div class="education-icon-wrapper">
           <i data-lucide="graduation-cap"></i>
